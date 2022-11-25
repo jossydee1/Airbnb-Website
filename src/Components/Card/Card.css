@@ -1,0 +1,31 @@
+.card {
+margin: 20px 40px;
+}
+
+.card > img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.card-details {
+    display: flex;
+}
+
+.card-details > strong {
+    margin-right: 10%;
+}
+
+.card-details > img {
+    width: 7%;
+    height: 3%;
+    /* margin-left: 10%; */
+}
+
+.card-details2 > p {
+    margin-block: 0;
+}
+
+.fill {
+    display: grid;
+	grid-template-columns: auto auto auto;
+}
