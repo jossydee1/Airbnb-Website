@@ -3,48 +3,54 @@ import "./Card.css";
 import Picture from "../../Resources/Airbnb Picture.png";
 import Star from "../../Resources/Star rating.png";
 
-// Using Destructuring method
-function Card({ title, rating, dateAdded, availability, price, image, star }) {
-  return (
-    <div className="card">
-      <img src={image} alt="" />
-      <div className="card-details">
-        <strong>{title}</strong>
-        {Array(star)
-          .fill()
-          .map((i) => (
-            <img src={Star} alt="" />
-          ))}
 
-        <span>{rating}</span>
-      </div>
-      <div className="card-details2">
-        <p>{dateAdded}</p>
-        <p>{availability}</p>
-        <strong>{price}</strong>
-      </div>
-    </div>
-  );
-}
+
+// Hardcoded data Sample
+
+// Using Destructuring method
+// function Card({ title, rating, dateAdded, availability, price, image, star }) {
+//   return (
+//     <div className="card">
+//       <img src={image} alt="" />
+//       <div className="card-details">
+//         <strong>{title}</strong>
+//         {Array(star)
+//           .fill()
+//           .map((i) => (
+//             <img src={Star} alt="" />
+//           ))}
+
+//         <span>{rating}</span>
+//       </div>
+//       <div className="card-details2">
+//         <p>{dateAdded}</p>
+//         <p>{availability}</p>
+//         <strong>{price}</strong>
+//       </div>
+//     </div>
+//   );
+// }
 
 // OR this method of props
-// function Card(props) {
-//     return (
-//       <div className="card">
-//         <img src={props.image} alt="" />
-//         <div className="card-details">
-//           <strong>{props.title}</strong>
-//           <img src={props.star} alt="" />
-//           <span>{props.rating}</span>
-//         </div>
-//         <div className="card-details2">
-//           <p>{props.dateAdded}</p>
-//           <p>{props.availability}</p>
-//           <strong>{props.price}</strong>
-//         </div>
-//       </div>
-//     );
-//   }
+
+const Card = (props) => {
+    return (
+      <div className="card">
+        <img src={props.image} alt="" />
+        <div className="card-details">
+                <strong>{props.title}</strong>
+                {Array(props.star).fill().map((i)=>(
+                    <img src={Star} alt="" />))}
+          <span>{props.rating}</span>
+        </div>
+        <div className="card-details2">
+          <p>{props.dateAdded}</p>
+          <p>{props.availability}</p>
+          <strong>{props.price}</strong>
+        </div>
+      </div>
+    );
+  }
 
 function Fill() {
   return (
